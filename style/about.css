@@ -1,0 +1,363 @@
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* General Styles */
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 15px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://via.placeholder.com/1500x900') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.hero button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: black;
+    background-color: #DDEEFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Mission Section */
+.mission {
+    background-color: #F7F7F7;
+    text-align: center;
+}
+
+.mission h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.mission p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Featured Region Section */
+.regions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.region-card {
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.region-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.region-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.region-card h3 {
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+/* Influencer Spotlight */
+.influencer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+}
+
+.influencer img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.influencer img:hover {
+    transform: scale(1.1);
+}
+
+.influencer .info {
+    max-width: 500px;
+}
+
+.influencer .info h3 {
+    font-size: 1.8rem;
+}
+
+.cta {
+    background-color: #DDEEFF;
+    color: black;
+    text-align: center;
+    padding: 10px 10px;
+    
+}
+
+.cta h2 {
+    font-size: 2rem;
+}
+
+.cta button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+    margin: 10px 10px;
+}
+
+.cta button:hover {
+    background-color: #f0f0f0;
+}
+
+.dark-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; /* 어두운 오버레이가 네비게이션보다 아래에 위치 */
+    display: none;
+    transition: background-color 0.3s;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* 처음에는 숨김 상태 */
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.scroll-to-top:hover {
+    background-color: #555;
+    transform: scale(1.1); /* 살짝 커지는 효과 */
+}
+
+.nav_main {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+
+    background-color: #f0f0f0;
+    color: black;
+    transition: top 0.3s ease;
+    
+    z-index: 10;
+
+}
+
+.nav_main nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav_main nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav_main nav a:hover {
+    text-decoration: underline;
+}
+
+.show-nav_main {
+    top: 0;
+}
+
+
+
+
+.team-section {
+    margin-top: 150px;
+  }
+  
+  
+  /* Card 기본 스타일 */
+  .custom-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* 테두리 제거 */
+    box-shadow: none; /* 카드 그림자도 제거하려면 추가 */
+  }
+  
+  /* 이름과 소속을 카드 하단으로 배치 */
+  .custom-card .card-title {
+    position: absolute;
+    bottom: 10px; /* 카드 하단으로 여백 */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 5px 0;
+    z-index: 10;
+    color: black; /* 텍스트 색상 */
+  }
+  
+  .custom-card {
+    background-size: 40% auto; /* 이미지 크기를 60%로 설정 */
+    background-position: center; /* 배경 이미지 중앙 정렬 */
+    background-repeat: no-repeat; /* 배경 이미지 반복되지 않도록 설정 */
+    height: 300px; /* 카드 높이 설정 (필요에 따라 조정) */
+  }
+  
+  /* .custom-card .card-text {
+    position: absolute;
+    bottom: 20px; 
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 5px 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6); 
+    color: white; 
+  } */
+  
+  /* 제목 스타일 */
+  .custom-card .card-title {
+    font-size: 1.5rem; /* 글자 크기 */
+    font-weight: bold; /* 굵은 글씨 */
+    font-family: 'Arial', sans-serif; /* 폰트 설정 */
+  }
+  
+  /* 소속 스타일 */
+  .custom-card .card-text {
+    font-size: 1rem; /* 소속 글자 크기 */
+    font-family: 'Roboto', sans-serif; /* 폰트 설정 */
+    color: #ddd; /* 약간 밝은 회색 */
+  }
+  
+  /* 오버레이 스타일 */
+  .overlay {
+    background: rgba(0, 0, 0, 0.6); /* 반투명 어두운 배경 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* 마우스를 올리면 오버레이 활성화 */
+  .custom-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* 상세 정보 스타일 */
+  .details {
+    color: white;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  .details a {
+    color: #1e90ff; /* 링크 색상 */
+    text-decoration: none;
+  }
+  
+  .details a:hover {
+    text-decoration: underline;
+  }
+  
